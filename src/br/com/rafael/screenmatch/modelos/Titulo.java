@@ -1,12 +1,18 @@
 package br.com.rafael.screenmatch.modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double SomaDasAvaliacos;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
     // depois de deixar privado as avaliações, devemos fazer um método abaixo.
     public int getTotalDeAvaliacoes(){
         return totalDeAvaliacoes;
@@ -56,8 +62,14 @@ public class Titulo {
         totalDeAvaliacoes++;
     }
 
+
     // agora vamos fazer um método que retorna algo
     public double pegaMediaNotas(){
         return SomaDasAvaliacos/totalDeAvaliacoes;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }

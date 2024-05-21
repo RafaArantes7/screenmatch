@@ -7,6 +7,10 @@ public class Serie extends Titulo { // aqui estamos trabalhando com herança. Tu
     private boolean ativa;
     private int minutosPorEpisodios;
 
+    public Serie(String nome, int anoDeLancamento) {
+        super(nome, anoDeLancamento);
+    }
+
     public int getTemporadas() {
         return temporadas;
     }
@@ -43,4 +47,10 @@ public class Serie extends Titulo { // aqui estamos trabalhando com herança. Tu
     public int getDuracaoEmMinutos() {
         return temporadas * episodiosPorTemporadas * minutosPorEpisodios;
     }
+
+    @Override
+    public String toString() {
+        return "Serie: " + this.getNome() + " (" + this.getAnoDeLancamento() + ")";
+    }
 }
+
