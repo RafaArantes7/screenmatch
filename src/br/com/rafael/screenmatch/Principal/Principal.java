@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme primeiroFilme = new Filme("Senhor dos Anéis", 2000);
+        Filme primeiroFilme = new Filme("Matrix", 2000);
         primeiroFilme.setDuracaoEmMinutos(180);
         System.out.println("Duração do filme: " + primeiroFilme.getDuracaoEmMinutos());
 
